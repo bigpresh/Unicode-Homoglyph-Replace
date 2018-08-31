@@ -5,9 +5,9 @@ use strict;
 use warnings;
 use utf8;
 
-use Exporter;
+use Exporter qw(import);
 
-@EXPORT_OK = qw(replace_homoglyphs disguise);
+our @EXPORT_OK = qw(replace_homoglyphs disguise);
 
 =head1 NAME
 
