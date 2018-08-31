@@ -647,7 +647,6 @@ sub _build_replace_map {
     for my $ascii_char (keys %homoglyphs) {
         for my $homoglyph (@{ $homoglyphs{$ascii_char} }) {
             $replace_map{$homoglyph} = $ascii_char;
-            print "We replace $homoglyph with $ascii_char\n";
         }
     }
 }
