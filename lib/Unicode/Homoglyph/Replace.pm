@@ -5,6 +5,10 @@ use strict;
 use warnings;
 use utf8;
 
+use Exporter;
+
+@EXPORT_OK = qw(replace_homoglyphs disguise);
+
 =head1 NAME
 
 Unicode::Homoglyph::Replace - replace homoglyphs with their ASCII lookalike equivalents
@@ -15,10 +19,6 @@ our $VERSION = '0.01';
 
 
 =head1 SYNOPSIS
-
-Quick summary of what the module does.
-
-Perhaps a little code snippet.
 
     use Unicode::Homoglyph::Replace qw(replace_homoglyphs);
 
