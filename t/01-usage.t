@@ -6,13 +6,9 @@ use Test::More;
 
 use utf8;
 
-plan tests => 85;
+use Unicode::Homoglyph::Replace;
 
-BEGIN {
-    use_ok( 'Unicode::Homoglyph::Replace' ) || print "Bail out!\n";
-    # We're going to output UTF8 chars to the console:
-    binmode STDERR, ':utf8';
-}
+plan tests => 84;
 
 diag( "Testing Unicode::Homoglyph::Replace $Unicode::Homoglyph::Replace::VERSION, Perl $], $^X" );
 
@@ -28,7 +24,6 @@ my %tests = (
     '1∼ᒿ⁓3~4﹕ⵑ￨｛{}﹜⎢￨ᛁ' => '1~2~3~4:!|{{}}|||',
 );
 while(my($disguised, $ascii) = each(%tests)) {
-    diag "Test: $disguised => $ascii";
     is(
         Unicode::Homoglyph::Replace::replace_homoglyphs($disguised),
         $ascii,
